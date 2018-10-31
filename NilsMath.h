@@ -5,6 +5,8 @@
 #ifndef HWENGINE_NILSMATH_H
 #define HWENGINE_NILSMATH_H
 
+#include "Vector3.h"
+#include "Vector2.h"
 
 class NilsMath {
 
