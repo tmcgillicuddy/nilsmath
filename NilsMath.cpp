@@ -3,3 +3,6 @@
 //
 
 #include "NilsMath.h"
+namespace TandenEngine {
+
+}

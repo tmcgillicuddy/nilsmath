@@ -8,9 +8,12 @@
 #include "Vector3.h"
 #include "Vector2.h"
 
-class NilsMath {
+namespace TandenEngine {
 
-};
+    class NilsMath {
 
+    };
+
+}
 
 #endif //HWENGINE_NILSMATH_H

@@ -5,10 +5,12 @@
 #ifndef HWENGINE_VECTOR2_H
 #define HWENGINE_VECTOR2_H
 
+namespace TandenEngine {
 
-class Vector2 {
-    float x, y;
-};
+    class Vector2 {
+        float x, y;
+    };
 
+}
 
 #endif //HWENGINE_VECTOR2_H
