@@ -7,8 +7,10 @@
 
 namespace TandenEngine {
 
-    class Vector3 {
+    struct Vector3 {
+        float x =0, y=0, z=0;
 
+        //TODO Add an operator/func to add a vector3 to a string and convert a string to a vector3
     };
 
 }

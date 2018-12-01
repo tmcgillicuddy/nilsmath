@@ -6,8 +6,15 @@
 #define TANDENENGINE_UUID_H
 
 
-class UUID {
+#include <cstdint>
 
+//Wraps the UUID generation and operations, used mainly for meta data tracking
+
+struct UUID {
+public:
+    uint8_t mUuid;
+    UUID();
+    static uint8_t GenerateUUID();
 };
 
 
