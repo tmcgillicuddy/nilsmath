@@ -5,12 +5,25 @@
 #ifndef HWENGINE_NILSMATH_H
 #define HWENGINE_NILSMATH_H
 
-#include "Vector3.h"
 #include "Vector2.h"
+#include "Vector3.h"
+#include "Vector4.h"
+#include <cmath>
 
 namespace TandenEngine {
 
     class NilsMath {
+
+        // Ask Sajit if I can do this better
+        // Vec4 currently not including properly?
+        static float dot(Vector2 a, Vector2 b);
+        static float dot(Vector3 a, Vector3 b);
+        //static float dot(Vector4 a, Vector4 b);
+
+        static float dist(Vector2 a, Vector2 b);
+        static float dist(Vector3 a, Vector3 b);
+        //static float dist(Vector4 a, Vector4 b);
+
 
     };
 

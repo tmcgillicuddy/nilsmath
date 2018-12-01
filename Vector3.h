@@ -24,13 +24,11 @@ namespace TandenEngine {
 		// Scalar Multiplication
 		Vector3 operator*(const int& other) {
 			x *= other;
-			y * = other;
-			z * = other;
+			y *= other;
+			z *= other;
 		};
 
 	};
-    };
-
 }
 
 #endif //HWENGINE_VECTOR3_H

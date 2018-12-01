@@ -14,16 +14,18 @@ namespace TandenEngine {
 
 		float x = 0, y = 0;
 
+		Vector2 xx();
+
 		// Vector + Vector
-		Vector3 operator+(const Vector3& other) {
+		Vector2 operator+(const Vector2& other) {
 			x += other.x;
 			y += other.y;
 		};
 
 		// Scalar Multiplication
-		Vector3 operator*(const int& other) {
+		Vector2 operator*(const int& other) {
 			x *= other;
-			y * = other;
+			y *= other;
 		};
 
 	};

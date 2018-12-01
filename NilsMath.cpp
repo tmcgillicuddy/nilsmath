@@ -5,4 +5,31 @@
 #include "NilsMath.h"
 namespace TandenEngine {
 
+    float NilsMath::dot(TandenEngine::Vector2 a, TandenEngine::Vector2 b) {
+        return (a.x * b.x + a.y * b.y);
+    }
+
+    float NilsMath::dot(TandenEngine::Vector3 a, TandenEngine::Vector3 b) {
+        return (a.x * b.x + a.y * b.y + a.z + b.z);
+    }
+
+    /*
+    float NilsMath::dot(TandenEngine::Vector4 a, TandenEngine::Vector4 b) {
+        return (a.x * b.x + a.y * b.y + a.z + b.z + a.w + b.w);
+    }
+    */
+
+    float NilsMath::dist(TandenEngine::Vector2 a, TandenEngine::Vector2 b) {
+        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+    }
+
+    float NilsMath::dist(TandenEngine::Vector3 a, TandenEngine::Vector3 b) {
+        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2) + pow(a.z - b.z, 2));
+    }
+
+    /*
+    float NilsMath::dist(TandenEngine::Vector4 a, TandenEngine::Vector4 b) {
+        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2) + pow(a.z - b.z, 2) + pow(a.w - b.w, 2));
+    }
+    */
 }

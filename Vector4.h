@@ -15,7 +15,7 @@ namespace TandenEngine {
 		float x = 0, y = 0, z = 0, w = 0;
 
 		// Vector + Vector
-		Vector3 operator+(const Vector3& other) {
+		Vector4 operator+(const Vector4& other) {
 			x += other.x;
 			y += other.y;
 			z += other.z;
@@ -23,12 +23,13 @@ namespace TandenEngine {
 		};
 
 		// Scalar Multiplication
-		Vector3 operator*(const int& other) {
+		Vector4 operator*(const int& other) {
 			x *= other;
-			y * = other;
-			z * = other;
+			y *= other;
+			z *= other;
 			w *= other;
 		};
+
 	};
 
 }
