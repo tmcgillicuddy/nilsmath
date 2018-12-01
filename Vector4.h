@@ -7,31 +7,28 @@
 
 namespace TandenEngine {
 
-	class Vector4 {
-	public:
+	struct Vector4 {
 		Vector4();
 		~Vector4();
-		// iirc, i can default individual values to something if only some inputs are given, somehow
-		Vector4(float setX, float setY, float setZ, float setW);
+		Vector4(float setX, float setY, float setZ, float setW) { x = setX; y = setY, z = setZ, w = setW; };
 
-		// Get Members
-		float GetX() { return x; };
-		float GetY() { return y; };
-		float GetZ() { return z; };
-		float GetW() { return w; };
+		float x = 0, y = 0, z = 0, w = 0;
 
-		// Set Members
-		void SetX(float newVal) { x = newVal; };
-		void SetY(float newVal) { y = newVal; };
-		void SetZ(float newVal) { z = newVal; };
-		void SetW(float newVal) { w = newVal; };
+		// Vector + Vector
+		Vector3 operator+(const Vector3& other) {
+			x += other.x;
+			y += other.y;
+			z += other.z;
+			w += other.w;
+		};
 
-		// Vector Operations (dot and cross products are general, in NilsMath)
-		Vector4 operator+(const Vector4& other);
-		Vector4 operator*(const int& other);
-
-	private:
-		float x, y, z, w;
+		// Scalar Multiplication
+		Vector3 operator*(const int& other) {
+			x *= other;
+			y * = other;
+			z * = other;
+			w *= other;
+		};
 	};
 
 }
