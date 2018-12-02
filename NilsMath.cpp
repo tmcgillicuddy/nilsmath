@@ -32,4 +32,14 @@ namespace TandenEngine {
         return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2) + pow(a.z - b.z, 2) + pow(a.w - b.w, 2));
     }
     */
+
+
+    float NilsMath::cross(TandenEngine::Vector2 a, TandenEngine::Vector2 b) {
+        return float(a.x * b.y - b.x * a.y);
+    }
+
+    Vector3 NilsMath::cross(TandenEngine::Vector3 a, TandenEngine::Vector3 b) {
+        return Vector3(a.y * b.z - b.y * a.z, a.x * b.z - b.x * a.z, a.x * b.y - b.x * a.y);
+    }
+
 }

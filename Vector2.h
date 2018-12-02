@@ -14,8 +14,6 @@ namespace TandenEngine {
 
 		float x = 0, y = 0;
 
-		Vector2 xx();
-
 		// Vector + Vector
 		Vector2 operator+(const Vector2& other) {
 			x += other.x;

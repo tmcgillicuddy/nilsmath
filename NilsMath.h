@@ -14,7 +14,7 @@ namespace TandenEngine {
 
     class NilsMath {
 
-        // Ask Sajit if I can do this better
+        // Ask Sajid if I can do this better
         // Vec4 currently not including properly?
         static float dot(Vector2 a, Vector2 b);
         static float dot(Vector3 a, Vector3 b);
@@ -24,6 +24,10 @@ namespace TandenEngine {
         static float dist(Vector3 a, Vector3 b);
         //static float dist(Vector4 a, Vector4 b);
 
+        static float cross(Vector2 a, Vector2 b);
+        static Vector3 cross(Vector3 a, Vector3 b);
+
+        // TODO: angles between, figure out primitives, matrices, ???
 
     };
 
