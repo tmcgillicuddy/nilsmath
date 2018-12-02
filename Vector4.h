@@ -10,9 +10,9 @@ namespace TandenEngine {
 	struct Vector4 {
 		Vector4();
 		~Vector4();
-		Vector4(float setX, float setY, float setZ, float setW) { x = setX; y = setY, z = setZ, w = setW; };
+		Vector4(float setX, float setY, float setZ, float setW) { x = setX, y = setY, z = setZ, w = setW; };
 
-		float x = 0, y = 0, z = 0, w = 0;
+		float x = 0.0, y = 0.0, z = 0.0, w = 0.0;
 
 		// Vector + Vector
 		Vector4 operator+(const Vector4& other) {

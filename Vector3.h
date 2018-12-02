@@ -10,9 +10,9 @@ namespace TandenEngine {
 	struct Vector3 {
 		Vector3();
 		~Vector3();
-		Vector3(float setX, float setY, float setZ) { x = setX; y = setY, z = setZ; };
+		Vector3(float setX, float setY, float setZ) { x = setX, y = setY, z = setZ; };
 
-		float x = 0, y = 0, z = 0;
+		float x = 0.0, y = 0.0, z = 0.0;
 
 		// Vector + Vector
 		Vector3 operator+(const Vector3& other) {
