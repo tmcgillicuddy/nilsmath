@@ -11,8 +11,8 @@
 namespace TandenEngine {
 
     struct mat3 {
-        mat3();
-        ~mat3();
+        mat3() {};
+        ~mat3() {};
         mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3) {
             r1.x = x1, r1.y = y1, r1.z = z1,
             r2.x = x2, r2.y = y2, r2.z = z2,
