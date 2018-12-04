@@ -6,7 +6,6 @@
 #define TANDENENGINE_MATRIX3_H
 
 #include "Vector3.h"
-#include "NilsMath.h"
 
 namespace TandenEngine {
 
