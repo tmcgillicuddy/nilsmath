@@ -5,6 +5,8 @@
 #ifndef HWENGINE_VECTOR3_H
 #define HWENGINE_VECTOR3_H
 
+#include <iostream>
+
 namespace TandenEngine {
 
 	struct Vector3 {
@@ -45,6 +47,8 @@ namespace TandenEngine {
             toReturn.z = z * other;
             return toReturn;
         };
+
+        friend std::ostream & operator << (std::ostream &out, const Vector3 &data);
 
 	};
 }
