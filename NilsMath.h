@@ -5,9 +5,9 @@
 #ifndef HWENGINE_NILSMATH_H
 #define HWENGINE_NILSMATH_H
 
-#include "Vector2.h"
-#include "Vector3.h"
-#include "Vector4.h"
+#include "Vectors/Vector2.h"
+#include "Vectors/Vector3.h"
+#include "Vectors/Vector4.h"
 #include "Matrix3.h"
 #include "Matrix4.h"
 

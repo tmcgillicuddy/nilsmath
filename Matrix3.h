@@ -5,7 +5,7 @@
 #ifndef TANDENENGINE_MATRIX3_H
 #define TANDENENGINE_MATRIX3_H
 
-#include "Vector3.h"
+#include "Vectors/Vector3.h"
 
 namespace TandenEngine {
 

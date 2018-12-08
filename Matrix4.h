@@ -5,7 +5,7 @@
 #ifndef TANDENENGINE_MATRIX4_H
 #define TANDENENGINE_MATRIX4_H
 
-#include "Vector4.h"
+#include "Vectors/Vector4.h"
 
 
 namespace TandenEngine {
