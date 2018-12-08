@@ -10,6 +10,8 @@
 namespace TandenEngine {
 
 	struct Vector2 {
+
+
 		Vector2() {};
 		~Vector2() {};
 		Vector2(float setX, float setY) { x = setX, y = setY; };
@@ -46,6 +48,13 @@ namespace TandenEngine {
 
 		friend std::ostream & operator << (std::ostream &out, const Vector2 &data);
 
+		//Static Vec2s
+		static const Vector2 ZERO;
+		static const Vector2 ONE;
+		static const Vector2 UP;
+		static const Vector2 DOWN;
+		static const Vector2 LEFT;
+		static const Vector2 RIGHT;
 	};
 
 }
