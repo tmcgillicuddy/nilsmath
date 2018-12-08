@@ -10,6 +10,7 @@
 #include "Vectors/Vector4.h"
 #include "Matrix3.h"
 #include "Matrix4.h"
+#include "Color.h"
 
 #include <cmath>
 
