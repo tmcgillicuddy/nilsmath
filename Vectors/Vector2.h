@@ -5,6 +5,8 @@
 #ifndef HWENGINE_VECTOR2_H
 #define HWENGINE_VECTOR2_H
 
+#include <iostream>
+
 namespace TandenEngine {
 
 	struct Vector2 {
@@ -41,6 +43,8 @@ namespace TandenEngine {
 			toReturn.y = y * other;
 			return toReturn;
 		};
+
+		friend std::ostream & operator << (std::ostream &out, const Vector2 &data);
 
 	};
 
