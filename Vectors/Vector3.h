@@ -50,7 +50,17 @@ namespace TandenEngine {
 
         friend std::ostream & operator << (std::ostream &out, const Vector3 &data);
 
-	};
+        //Static Vec3s
+        static const Vector3 ZERO;
+        static const Vector3 ONE;
+        static const Vector3 UP;
+        static const Vector3 DOWN;
+        static const Vector3 LEFT;
+        static const Vector3 RIGHT;
+        static const Vector3 FORWARD;
+        static const Vector3 BACKWARD;
+
+    };
 }
 
 #endif HWENGINE_VECTOR3_H
