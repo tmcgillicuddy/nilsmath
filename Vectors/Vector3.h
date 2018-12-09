@@ -48,6 +48,8 @@ namespace TandenEngine {
             return toReturn;
         };
 
+        static float Distance(Vector3 pos, Vector3 target);
+
         friend std::ostream & operator << (std::ostream &out, const Vector3 &data);
 
         //Static Vec3s
