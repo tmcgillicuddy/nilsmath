@@ -3,6 +3,8 @@
 //
 
 #include "NilsMath.h"
+#include <cmath>
+
 namespace TandenEngine {
 
     float NilsMath::dot(TandenEngine::Vector2 a, TandenEngine::Vector2 b) {

@@ -12,8 +12,6 @@
 #include "Matrix4.h"
 #include "Color.h"
 
-#include <cmath>
-
 namespace TandenEngine {
 
     class NilsMath {
@@ -30,6 +28,8 @@ namespace TandenEngine {
         static float cross(Vector2 a, Vector2 b);
         static Vector3 cross(Vector3 a, Vector3 b);
 
+    public:
+        static const int INFINITY = INT_MAX;
 
         // TODO: angles between, figure out primitives, matrices, ???
 
