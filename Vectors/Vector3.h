@@ -48,7 +48,7 @@ namespace TandenEngine {
             return toReturn;
         };
 
-        Vector3 operator*(const float& other) {
+        const Vector3 operator*(const float& other) {
             Vector3 toReturn;
             toReturn.x = x * other;
             toReturn.y = y * other;

@@ -29,8 +29,6 @@ namespace TandenEngine {
         static Vector3 cross(Vector3 a, Vector3 b);
 
     public:
-        static const int INFINITY = INT_MAX;
-
         // TODO: angles between, figure out primitives, matrices, ???
 
     };
