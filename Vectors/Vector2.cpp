@@ -19,4 +19,15 @@ namespace TandenEngine {
         out << " Y: " << data.y << std::endl;
         return out;
     }
+
+    float dot(const Vector2& a, const Vector2& b) {
+        return ((a.x * b.x) + (a.y * b.y));
+    }
+
+    Vector2 hadamard(const Vector2& a, const Vector2& b) {
+        Vector2 toReturn;
+        toReturn.x = a.x * b.x;
+        toReturn.y = a.y * b.y;
+        return toReturn;
+    }
 }
