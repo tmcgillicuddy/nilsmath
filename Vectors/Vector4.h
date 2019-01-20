@@ -122,6 +122,15 @@ namespace TandenEngine {
             return toReturn;
         };
 
+        // Relational Operators
+        bool operator==(const Vector4& other) const {
+            return ((x == other.x) && (y == other.y) && (z == other.z) && (w == other.w));
+        }
+
+        bool operator!=(const Vector4& other) const {
+            return !(*this == other);
+        }
+
         friend std::ostream & operator << (std::ostream &out, const Vector4 &data);
 
         // TODO: better way of aliasing this
