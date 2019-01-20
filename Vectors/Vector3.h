@@ -24,7 +24,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector3 operator+(const Vector3& other) {
+        Vector3 operator+(const Vector3& other) const {
             Vector3 toReturn;
             toReturn.x = x + other.x;
             toReturn.y = y + other.y;
@@ -39,7 +39,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector3 operator+(const float other) {
+        Vector3 operator+(const float other) const {
             Vector3 toReturn;
             toReturn.x = x + other;
             toReturn.y = y + other;
@@ -55,7 +55,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector3 operator-(const Vector3& other) {
+        Vector3& operator-(const Vector3& other) const {
             Vector3 toReturn;
             toReturn.x = x - other.x;
             toReturn.y = y - other.y;
@@ -70,7 +70,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector3 operator-(const float other) {
+        Vector3 operator-(const float other) const {
             Vector3 toReturn;
             toReturn.x = x - other;
             toReturn.y = y - other;
@@ -86,7 +86,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector3 operator*(const float other) {
+        Vector3 operator*(const float other) const {
             Vector3 toReturn;
             toReturn.x = x * other;
             toReturn.y = y * other;
@@ -102,7 +102,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector3 operator*(const Vector3& other) {
+        Vector3 operator*(const Vector3& other) const {
             Vector3 toReturn;
             toReturn.x = x * other.x;
             toReturn.y = y * other.y;
@@ -110,6 +110,7 @@ namespace TandenEngine {
             return toReturn;
         };
 
+        friend std::ostream & operator << (std::ostream &out, const Vector3 &data);
 
         // TODO: better way of aliasing this
         static float Norm(const Vector3& vec);
@@ -117,8 +118,6 @@ namespace TandenEngine {
         static float Length(const Vector3& vec)  { return Norm(vec); };;
 
         static float Distance(const Vector3& pos, const Vector3& target);
-
-        friend std::ostream & operator << (std::ostream &out, const Vector3 &data);
 
         static float Dot(const Vector3& a, const Vector3& b);
 

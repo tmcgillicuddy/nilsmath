@@ -25,7 +25,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator+(const Vector4& other) {
+        Vector4 operator+(const Vector4& other) const {
             Vector4 toReturn;
             toReturn.x = x + other.x;
             toReturn.y = y + other.y;
@@ -42,7 +42,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator+(const float other) {
+        Vector4 operator+(const float other) const {
             Vector4 toReturn;
             toReturn.x = x + other;
             toReturn.y = y + other;
@@ -60,7 +60,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator-(const Vector4& other) {
+        Vector4 operator-(const Vector4& other) const {
             Vector4 toReturn;
             toReturn.x = x - other.x;
             toReturn.y = y - other.y;
@@ -77,7 +77,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator-(const float other) {
+        Vector4 operator-(const float other) const {
             Vector4 toReturn;
             toReturn.x = x - other;
             toReturn.y = y - other;
@@ -95,7 +95,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator*(const float other) {
+        Vector4 operator*(const float other) const {
             Vector4 toReturn;
             toReturn.x = x * other;
             toReturn.y = y * other;
@@ -113,7 +113,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator*(const Vector4& other) {
+        Vector4 operator*(const Vector4& other) const {
             Vector4 toReturn;
             toReturn.x = x * other.x;
             toReturn.y = y * other.y;
@@ -122,13 +122,14 @@ namespace TandenEngine {
             return toReturn;
         };
 
+        friend std::ostream & operator << (std::ostream &out, const Vector4 &data);
 
         // TODO: better way of aliasing this
         static float Norm(const Vector4& vec);
         static float Magnitude(const Vector4& vec) { return Norm(vec); };
         static float Length(const Vector4& vec)  { return Norm(vec); };;
 
-        friend std::ostream & operator << (std::ostream &out, const Vector4 &data);
+        static float Distance(const Vector4& pos, const Vector4& target);
 
         static float Dot(const Vector4& a, const Vector4& b);
 

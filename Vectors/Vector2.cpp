@@ -13,15 +13,20 @@ namespace TandenEngine {
     const Vector2 Vector2::LEFT = Vector2(-1,0);
     const Vector2 Vector2::RIGHT = Vector2(1,0);
 
-    float Vector2::Norm(const TandenEngine::Vector2 &vec) {
-        return sqrt(vec.x * vec.x + vec.y * vec.y);
-    }
-
     std::ostream & operator << (std::ostream &out, const Vector2 &data)
     {
         out << "X: " << data.x;
         out << " Y: " << data.y << std::endl;
         return out;
+    }
+
+    float Vector2::Norm(const TandenEngine::Vector2 &vec) {
+        return sqrt(vec.x * vec.x + vec.y * vec.y);
+    }
+
+    float Vector2::Distance(const Vector2& pos, const Vector2& target) {
+        Vector2 diff = target - pos;
+        return Norm(diff);
     }
 
     float Vector2::Dot(const Vector2& a, const Vector2& b) {

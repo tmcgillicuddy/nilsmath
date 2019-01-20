@@ -14,10 +14,6 @@ namespace TandenEngine {
     const Vector3 Vector3::FORWARD = Vector3(0,0,1);
     const Vector3 Vector3::BACKWARD = Vector3(0,0,-1);
 
-    float Vector3::Norm(const TandenEngine::Vector3 &vec) {
-        return sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
-    }
-
     std::ostream & operator << (std::ostream &out, const Vector3 &data)
     {
         out << "X: " << data.x;
@@ -26,17 +22,13 @@ namespace TandenEngine {
         return out;
     }
 
+    float Vector3::Norm(const TandenEngine::Vector3 &vec) {
+        return sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
+    }
+
     float Vector3::Distance(const Vector3& pos, const Vector3& target) {
-        float dist;
-        float diffX = pos.x - target.x;
-        float diffY = pos.y - target.y;
-        float diffZ = pos.z - target.z;
-        diffX = pow(diffX, 2);
-        diffY = pow(diffY, 2);
-        diffZ = pow(diffZ, 2);
-        float total = diffX+diffY+diffZ;
-        dist = sqrt(total);
-        return dist;
+        Vector3 diff = target - pos;
+        return Norm(diff);
     }
 
     float Vector3::Dot(const Vector3& a, const Vector3& b) {
