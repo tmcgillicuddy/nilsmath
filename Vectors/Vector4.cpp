@@ -5,6 +5,14 @@
 #include "Vector4.h"
 
 namespace TandenEngine {
+
+    const Vector4 Vector4::ZERO = Vector4(0,0,0,0);
+    const Vector4 Vector4::ONE = Vector4(1,1,1,1);
+
+    float Vector4::Norm(const TandenEngine::Vector4 &vec) {
+        return sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + vec.w * vec.w);
+    }
+
     std::ostream & operator << (std::ostream &out, const Vector4 &data)
     {
         out << "X: " << data.x;
@@ -14,16 +22,8 @@ namespace TandenEngine {
         return out;
     }
 
-    float dot(const Vector4& a, const Vector4& b) {
+    float Vector4::Dot(const Vector4& a, const Vector4& b) {
         return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w));
     }
 
-    Vector4 hadamard(const Vector4& a, const Vector4& b) {
-        Vector4 toReturn;
-        toReturn.x = a.x * b.x;
-        toReturn.y = a.y * b.y;
-        toReturn.z = a.z * b.z;
-        toReturn.w = a.w * b.w;
-        return toReturn;
-    }
 }

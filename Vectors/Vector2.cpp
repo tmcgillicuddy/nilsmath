@@ -13,6 +13,10 @@ namespace TandenEngine {
     const Vector2 Vector2::LEFT = Vector2(-1,0);
     const Vector2 Vector2::RIGHT = Vector2(1,0);
 
+    float Vector2::Norm(const TandenEngine::Vector2 &vec) {
+        return sqrt(vec.x * vec.x + vec.y * vec.y);
+    }
+
     std::ostream & operator << (std::ostream &out, const Vector2 &data)
     {
         out << "X: " << data.x;
@@ -20,14 +24,8 @@ namespace TandenEngine {
         return out;
     }
 
-    float dot(const Vector2& a, const Vector2& b) {
+    float Vector2::Dot(const Vector2& a, const Vector2& b) {
         return ((a.x * b.x) + (a.y * b.y));
     }
 
-    Vector2 hadamard(const Vector2& a, const Vector2& b) {
-        Vector2 toReturn;
-        toReturn.x = a.x * b.x;
-        toReturn.y = a.y * b.y;
-        return toReturn;
-    }
 }

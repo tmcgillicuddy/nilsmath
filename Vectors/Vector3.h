@@ -24,7 +24,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        const Vector3 operator+(const Vector3& other) {
+        Vector3 operator+(const Vector3& other) {
             Vector3 toReturn;
             toReturn.x = x + other.x;
             toReturn.y = y + other.y;
@@ -32,14 +32,14 @@ namespace TandenEngine {
             return toReturn;
         };
 
-        Vector3& operator+=(const float& other) {
+        Vector3& operator+=(const float other) {
             x += other;
             y += other;
             z += other;
             return *this;
         };
 
-        const Vector3 operator+(const float& other) {
+        Vector3 operator+(const float other) {
             Vector3 toReturn;
             toReturn.x = x + other;
             toReturn.y = y + other;
@@ -55,7 +55,7 @@ namespace TandenEngine {
             return *this;
         };
 
-        const Vector3 operator-(const Vector3& other) {
+        Vector3 operator-(const Vector3& other) {
             Vector3 toReturn;
             toReturn.x = x - other.x;
             toReturn.y = y - other.y;
@@ -63,15 +63,30 @@ namespace TandenEngine {
             return toReturn;
         };
 
+        Vector3& operator-=(const float other) {
+            x -= other;
+            y -= other;
+            z -= other;
+            return *this;
+        };
+
+        Vector3 operator-(const float other) {
+            Vector3 toReturn;
+            toReturn.x = x - other;
+            toReturn.y = y - other;
+            toReturn.z = z - other;
+            return toReturn;
+        };
+
         // Scalar Multiplication
-        Vector3& operator*=(const float& other) {
+        Vector3& operator*=(const float other) {
             x *= other;
             y *= other;
             z *= other;
             return *this;
         };
 
-        const Vector3 operator*(const float& other) {
+        Vector3 operator*(const float other) {
             Vector3 toReturn;
             toReturn.x = x * other;
             toReturn.y = y * other;
@@ -79,14 +94,33 @@ namespace TandenEngine {
             return toReturn;
         };
 
+        // Hadamard Product, multiplication of elements
+        Vector3& operator*=(const Vector3& other) {
+            x *= other.x;
+            y *= other.y;
+            z *= other.z;
+            return *this;
+        };
 
-        static float Distance(Vector3 pos, Vector3 target);
+        Vector3 operator*(const Vector3& other) {
+            Vector3 toReturn;
+            toReturn.x = x * other.x;
+            toReturn.y = y * other.y;
+            toReturn.z = z * other.z;
+            return toReturn;
+        };
+
+
+        // TODO: better way of aliasing this
+        static float Norm(const Vector3& vec);
+        static float Magnitude(const Vector3& vec) { return Norm(vec); };
+        static float Length(const Vector3& vec)  { return Norm(vec); };;
+
+        static float Distance(const Vector3& pos, const Vector3& target);
 
         friend std::ostream & operator << (std::ostream &out, const Vector3 &data);
 
-        float dot(const Vector3& a, const Vector3& b);
-
-        Vector3 hadamard(const Vector3& a, const Vector3& b);
+        static float Dot(const Vector3& a, const Vector3& b);
 
         //Static Vec3s
         static const Vector3 ZERO;

@@ -25,20 +25,20 @@ namespace TandenEngine {
 			return *this;
 		};
 
-		const Vector2 operator+(const Vector2& other) {
+		Vector2 operator+(const Vector2& other) {
 			Vector2 toReturn;
 			toReturn.x = x + other.x;
 			toReturn.y = y + other.y;
 			return toReturn;
 		};
 
-		Vector2& operator+=(const float& other) {
+		Vector2& operator+=(const float other) {
 			x += other;
 			y += other;
 			return *this;
 		};
 
-		const Vector2 operator+(const float& other) {
+		Vector2 operator+(const float other) {
 			Vector2 toReturn;
 			toReturn.x = x + other;
 			toReturn.y = y + other;
@@ -52,35 +52,63 @@ namespace TandenEngine {
 			return *this;
 		};
 
-		const Vector2 operator-(const Vector2& other) {
+		Vector2 operator-(const Vector2& other) {
 			Vector2 toReturn;
 			toReturn.x = x - other.x;
 			toReturn.y = y - other.y;
 			return toReturn;
 		};
 
+		Vector2& operator-=(const float other) {
+			x -= other;
+			y -= other;
+			return *this;
+		};
+
+		Vector2 operator-(const float other) {
+			Vector2 toReturn;
+			toReturn.x = x - other;
+			toReturn.y = y - other;
+			return toReturn;
+		};
+
 		// Scalar Multiplication
-		Vector2& operator*=(const float& other) {
+		Vector2& operator*=(const float other) {
 			x *= other;
 			y *= other;
 			return *this;
 		};
 
-		const Vector2 operator*(const float& other) {
+		Vector2 operator*(const float other) {
 			Vector2 toReturn;
 			toReturn.x = x * other;
 			toReturn.y = y * other;
 			return toReturn;
 		};
 
+		// Hadamard Product, multiplication of elements
+		Vector2& operator*=(const Vector2& other) {
+			x *= other.x;
+			y *= other.y;
+			return *this;
+		};
+
+		Vector2 operator*(const Vector2& other) {
+			Vector2 toReturn;
+			toReturn.x = x * other.x;
+			toReturn.y = y * other.y;
+			return toReturn;
+		};
+
+
+		// TODO: better way of aliasing this
+		static float Norm(const Vector2& vec);
+		static float Magnitude(const Vector2& vec) { return Norm(vec); };
+		static float Length(const Vector2& vec)  { return Norm(vec); };;
 
 		friend std::ostream & operator << (std::ostream &out, const Vector2 &data);
 
-		float length(const Vector2& a, const Vector2& b);
-
-		float dot(const Vector2& a, const Vector2& b);
-
-		Vector2 hadamard(const Vector2& a, const Vector2& b);
+		static float Dot(const Vector2& a, const Vector2& b);
 
 		//Static Vec2s
 		static const Vector2 ZERO;
