@@ -18,10 +18,11 @@ namespace TandenEngine {
             r3.x = x3, r3.y = y3, r3.z = z3;
         };
 
+        // TODO: addition, multiplication, rotation?, inverse?
+
         Vector3 r1;
         Vector3 r2;
         Vector3 r3;
-
 
     };
 
