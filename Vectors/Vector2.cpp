@@ -3,6 +3,7 @@
 //
 
 #include "Vector2.h"
+#include <string>
 
 namespace TandenEngine {
 
@@ -31,6 +32,10 @@ namespace TandenEngine {
 
     float Vector2::Dot(const Vector2& a, const Vector2& b) {
         return ((a.x * b.x) + (a.y * b.y));
+    }
+
+    std::string Vector2::ToString(){
+        return "X: " + std::to_string(x) + " Y: " + std::to_string(y);
     }
 
 }

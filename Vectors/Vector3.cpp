@@ -3,6 +3,8 @@
 //
 
 #include "Vector3.h"
+#include <string>
+
 namespace TandenEngine {
 
     const Vector3 Vector3::ZERO = Vector3(0,0,0);
@@ -33,6 +35,10 @@ namespace TandenEngine {
 
     float Vector3::Dot(const Vector3& a, const Vector3& b) {
         return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z));
+    }
+
+    std::string Vector3::ToString() {
+        return  "X: " + std::to_string(x) + " Y: " + std::to_string(y) + " Z: " + std::to_string(z);
     }
 
 }

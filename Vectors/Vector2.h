@@ -109,7 +109,9 @@ namespace TandenEngine {
             return !(*this == other);
         }
 
-        friend std::ostream & operator << (std::ostream &out, const Vector2 &data);
+		std::string ToString();
+
+		friend std::ostream & operator << (std::ostream &out, const Vector2 &data);
 
 		// TODO: better way of aliasing this
 		static float Norm(const Vector2& vec);
