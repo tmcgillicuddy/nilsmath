@@ -133,6 +133,8 @@ namespace TandenEngine {
 
         friend std::ostream & operator << (std::ostream &out, const Vector4 &data);
 
+        std::string ToString();
+
         // TODO: better way of aliasing this
         static float Norm(const Vector4& vec);
         static float Magnitude(const Vector4& vec) { return Norm(vec); };

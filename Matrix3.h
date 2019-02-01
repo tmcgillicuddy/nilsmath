@@ -7,6 +7,8 @@
 
 #include "Vectors/Vector3.h"
 
+//TODO add cpp
+
 namespace TandenEngine {
 
     struct mat3 {
@@ -18,6 +20,10 @@ namespace TandenEngine {
             r3.x = x3, r3.y = y3, r3.z = z3;
         };
 
+        std::string ToString(){
+            return "\n" + r1.ToString() + '\n' + r2.ToString() + '\n' + r3.ToString();
+        };
+
         // TODO: addition, multiplication, rotation?, inverse?
 
         Vector3 r1;
@@ -25,8 +31,6 @@ namespace TandenEngine {
         Vector3 r3;
 
     };
-
-
 }
 
 #endif //TANDENENGINE_MATRIX3_H

@@ -7,6 +7,7 @@
 
 #include "Vectors/Vector4.h"
 
+//TODO add cpp
 
 namespace TandenEngine {
 
@@ -18,6 +19,10 @@ namespace TandenEngine {
             r2.x = x2, r2.y = y2, r2.z = z2, r2.w = w2,
             r3.x = x3, r3.y = y3, r3.z = z3, r3.w = w3,
             r4.x = x4, r4.y = y4, r4.z = z4, r4.w = w4;
+        };
+
+        std::string ToString(){
+            return "\n" + r1.ToString() + '\n' + r2.ToString() + '\n' + r3.ToString() + '\n' + r4.ToString();
         };
 
         Vector4 r1;
