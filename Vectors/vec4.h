@@ -9,15 +9,14 @@
 
 namespace TandenEngine {
 
-	struct Vector4 {
-		Vector4() {};
-		~Vector4() {};
-		Vector4(float setX, float setY, float setZ, float setW) { x = setX, y = setY, z = setZ, w = setW; };
+	struct vec4 {
+		vec4() {};
+		vec4(float setX, float setY, float setZ, float setW) { x = setX, y = setY, z = setZ, w = setW; };
 
 		float x = 0.0, y = 0.0, z = 0.0, w = 0.0;
 
         // Vector Addition
-        Vector4& operator+=(const Vector4& other) {
+        vec4& operator+=(const vec4& other) {
             x += other.x;
             y += other.y;
             z += other.z;
@@ -25,8 +24,8 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator+(const Vector4& other) const {
-            Vector4 toReturn;
+        vec4 operator+(const vec4& other) const {
+            vec4 toReturn;
             toReturn.x = x + other.x;
             toReturn.y = y + other.y;
             toReturn.z = z + other.z;
@@ -34,7 +33,7 @@ namespace TandenEngine {
             return toReturn;
         };
 
-        Vector4& operator+=(const float other) {
+        vec4& operator+=(const float other) {
             x += other;
             y += other;
             z += other;
@@ -42,8 +41,8 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator+(const float other) const {
-            Vector4 toReturn;
+        vec4 operator+(const float other) const {
+            vec4 toReturn;
             toReturn.x = x + other;
             toReturn.y = y + other;
             toReturn.z = z + other;
@@ -52,7 +51,7 @@ namespace TandenEngine {
         };
 
         // Vector Subtraction
-        Vector4& operator-=(const Vector4& other) {
+        vec4& operator-=(const vec4& other) {
             x -= other.x;
             y -= other.y;
             z -= other.z;
@@ -60,8 +59,8 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator-(const Vector4& other) const {
-            Vector4 toReturn;
+        vec4 operator-(const vec4& other) const {
+            vec4 toReturn;
             toReturn.x = x - other.x;
             toReturn.y = y - other.y;
             toReturn.z = z - other.z;
@@ -69,7 +68,7 @@ namespace TandenEngine {
             return toReturn;
         };
 
-        Vector4& operator-=(const float other) {
+        vec4& operator-=(const float other) {
             x -= other;
             y -= other;
             z -= other;
@@ -77,8 +76,8 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator-(const float other) const {
-            Vector4 toReturn;
+        vec4 operator-(const float other) const {
+            vec4 toReturn;
             toReturn.x = x - other;
             toReturn.y = y - other;
             toReturn.z = z - other;
@@ -87,7 +86,7 @@ namespace TandenEngine {
         };
 
         // Scalar Multiplication
-        Vector4& operator*=(const float other) {
+        vec4& operator*=(const float other) {
             x *= other;
             y *= other;
             z *= other;
@@ -95,8 +94,8 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator*(const float other) const {
-            Vector4 toReturn;
+        vec4 operator*(const float other) const {
+            vec4 toReturn;
             toReturn.x = x * other;
             toReturn.y = y * other;
             toReturn.z = z * other;
@@ -105,7 +104,7 @@ namespace TandenEngine {
         };
 
         // Hadamard Product, multiplication of elements
-        Vector4& operator*=(const Vector4& other) {
+        vec4& operator*=(const vec4& other) {
             x *= other.x;
             y *= other.y;
             z *= other.z;
@@ -113,8 +112,8 @@ namespace TandenEngine {
             return *this;
         };
 
-        Vector4 operator*(const Vector4& other) const {
-            Vector4 toReturn;
+        vec4 operator*(const vec4& other) const {
+            vec4 toReturn;
             toReturn.x = x * other.x;
             toReturn.y = y * other.y;
             toReturn.z = z * other.z;
@@ -123,30 +122,30 @@ namespace TandenEngine {
         };
 
         // Relational Operators
-        bool operator==(const Vector4& other) const {
+        bool operator==(const vec4& other) const {
             return ((x == other.x) && (y == other.y) && (z == other.z) && (w == other.w));
         }
 
-        bool operator!=(const Vector4& other) const {
+        bool operator!=(const vec4& other) const {
             return !(*this == other);
         }
 
-        friend std::ostream & operator << (std::ostream &out, const Vector4 &data);
+        friend std::ostream & operator << (std::ostream &out, const vec4 &data);
 
         std::string ToString();
 
         // TODO: better way of aliasing this
-        static float Norm(const Vector4& vec);
-        static float Magnitude(const Vector4& vec) { return Norm(vec); };
-        static float Length(const Vector4& vec)  { return Norm(vec); };;
+        static float Norm(const vec4& vec);
+        static float Magnitude(const vec4& vec) { return Norm(vec); };
+        static float Length(const vec4& vec)  { return Norm(vec); };;
 
-        static float Distance(const Vector4& pos, const Vector4& target);
+        static float Distance(const vec4& pos, const vec4& target);
 
-        static float Dot(const Vector4& a, const Vector4& b);
+        static float Dot(const vec4& a, const vec4& b);
 
         //Static Vec2s
-        static const Vector4 ZERO;
-        static const Vector4 ONE;
+        static const vec4 ZERO;
+        static const vec4 ONE;
 
     };
 

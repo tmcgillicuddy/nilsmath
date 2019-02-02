@@ -2,15 +2,15 @@
 // Created by thomas.mcgillicuddy on 10/31/2018.
 //
 
-#include "Vector4.h"
+#include "vec4.h"
 #include <string>
 
 namespace TandenEngine {
 
-    const Vector4 Vector4::ZERO = Vector4(0,0,0,0);
-    const Vector4 Vector4::ONE = Vector4(1,1,1,1);
+    const vec4 vec4::ZERO = vec4(0,0,0,0);
+    const vec4 vec4::ONE = vec4(1,1,1,1);
 
-    std::ostream & operator << (std::ostream &out, const Vector4 &data)
+    std::ostream & operator << (std::ostream &out, const vec4 &data)
     {
         out << "X: " << data.x;
         out << " Y: " << data.y;
@@ -19,20 +19,20 @@ namespace TandenEngine {
         return out;
     }
 
-    float Vector4::Norm(const TandenEngine::Vector4 &vec) {
+    float vec4::Norm(const TandenEngine::vec4 &vec) {
         return sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + vec.w * vec.w);
     }
 
-    float Vector4::Distance(const Vector4& pos, const Vector4& target) {
-        Vector4 diff = target - pos;
+    float vec4::Distance(const vec4& pos, const vec4& target) {
+        vec4 diff = target - pos;
         return Norm(diff);
     }
 
-    float Vector4::Dot(const Vector4& a, const Vector4& b) {
+    float vec4::Dot(const vec4& a, const vec4& b) {
         return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w));
     }
 
-    std::string Vector4::ToString() {
+    std::string vec4::ToString() {
         return "X: " + std::to_string(x) + " Y: " + std::to_string(y) +
                 " Z: " + std::to_string(z) + " W: " + std::to_string(w);
     }
