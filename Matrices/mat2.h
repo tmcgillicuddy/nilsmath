@@ -13,11 +13,15 @@ namespace TandenEngine {
         vec2 r1, r2;
 
         mat2(){};
+        ~mat2() {};
         mat2(float x1, float y1, float x2, float y2);
 
         std::string ToString();
 
 
+        static const mat2 ZERO;
+        static const mat2 ONE;
+        static const mat2 IDENTITY;
 
     };
 

@@ -22,6 +22,10 @@ namespace TandenEngine {
         vec3 r2;
         vec3 r3;
 
+
+        static const mat3 ZERO;
+        static const mat3 ONE;
+        static const mat3 IDENTITY;
     };
 }
 

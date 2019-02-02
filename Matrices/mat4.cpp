@@ -6,6 +6,10 @@
 
 namespace TandenEngine {
 
+    const mat4 mat4::ZERO = mat4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    const mat4 mat4::ONE = mat4(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    const mat4 mat4::IDENTITY = mat4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+
     mat4::mat4(float x1, float y1, float z1, float w1, float x2, float y2, float z2, float w2, float x3, float y3,
                float z3, float w3, float x4, float y4, float z4, float w4) {
         r1.x = x1, r1.y = y1, r1.z = z1, r1.w = w1,
