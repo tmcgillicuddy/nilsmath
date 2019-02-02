@@ -8,6 +8,7 @@
 #include "Vectors/vec2.h"
 #include "Vectors/vec3.h"
 #include "Vectors/vec4.h"
+#include "Vectors/VectorHashing.h"
 #include "Matrices/mat2.h"
 #include "Matrices/mat3.h"
 #include "Matrices/mat4.h"

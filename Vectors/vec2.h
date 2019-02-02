@@ -128,7 +128,6 @@ namespace TandenEngine {
 		static const vec2 LEFT;
 		static const vec2 RIGHT;
 	};
-
 }
 
 #endif HWENGINE_VECTOR2_H
