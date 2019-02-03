@@ -17,6 +17,16 @@ namespace TandenEngine {
         r3.x = x3, r3.y = y3, r3.z = z3;
     }
 
+    mat3 mat3::Transpose(const mat3& mat) {
+        mat3 toReturn;
+
+        toReturn.r1.x = mat.r1.x; toReturn.r1.y = mat.r2.x; toReturn.r1.z = mat.r3.x;
+        toReturn.r2.x = mat.r1.y; toReturn.r2.y = mat.r2.y; toReturn.r2.z = mat.r3.y;
+        toReturn.r3.x = mat.r1.z; toReturn.r3.y = mat.r2.z; toReturn.r3.z = mat.r3.z;
+
+        return toReturn;
+    }
+
     std::string mat3::ToString(){
         return "\n" + r1.ToString() + '\n' + r2.ToString() + '\n' + r3.ToString();
     }

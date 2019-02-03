@@ -16,6 +16,15 @@ namespace TandenEngine {
         r2.x = x2, r2.y = y2;
     }
 
+    mat2 mat2::Transpose(const mat2& mat) {
+        mat2 toReturn;
+
+        toReturn.r1.x = mat.r1.x; toReturn.r1.y = mat.r2.x;
+        toReturn.r2.x = mat.r1.y; toReturn.r2.y = mat.r2.y;
+
+        return toReturn;
+    }
+
     std::string mat2::ToString() {
         return "\n" + r1.ToString() + '\n' + r2.ToString();
     }

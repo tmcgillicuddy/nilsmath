@@ -136,6 +136,7 @@ namespace TandenEngine {
             return !(*this == other);
         }
 
+        static mat2 Transpose(const mat2& mat);
 
         std::string ToString();
 

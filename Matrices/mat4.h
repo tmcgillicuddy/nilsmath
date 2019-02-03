@@ -176,6 +176,9 @@ namespace TandenEngine {
             return !(*this == other);
         }
 
+        static mat4 Transpose(const mat4& mat);
+
+
         // TODO: other fun stuff you can do with matrices
 
 
