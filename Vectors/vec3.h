@@ -134,7 +134,7 @@ namespace TandenEngine {
 
         static float Dot(const vec3 &a, const vec3 &b);
 
-        // TODO: Cross Product
+        static vec3 Cross(const vec3 &a, const vec3 &b);
 
         //Static Vec3s
         static const vec3 ZERO;

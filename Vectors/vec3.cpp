@@ -37,6 +37,17 @@ namespace TandenEngine {
         return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z));
     }
 
+    vec3 vec3::Cross(const vec3 &a, const vec3 &b) {
+        vec3 toReturn;
+
+        toReturn.x = (a.y * b.z) - (a.z * b.y);
+        toReturn.y = (a.z * b.x) - (a.x * b.z);
+        toReturn.z = (a.x * b.y) - (a.y * b.x);
+
+        return toReturn;
+    }
+
+
     std::string vec3::ToString() {
         return  "X: " + std::to_string(x) + " Y: " + std::to_string(y) + " Z: " + std::to_string(z);
     }
