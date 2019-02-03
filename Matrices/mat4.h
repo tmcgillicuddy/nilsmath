@@ -113,8 +113,28 @@ namespace TandenEngine {
             return toReturn;
         }
 
-        // TODO: multiply by scalar, comparison operators, other fun stuff you can do with matrices
+        // Matrix * Scalar
+        mat4& operator*=(const float other) {
+            r1 *= other;
+            r2 *= other;
+            r3 *= other;
+            r4 *= other;
 
+            return *this;
+        }
+
+        mat4 operator*(const float other) const {
+            mat4 toReturn;
+
+            toReturn.r1 = r1 * other;
+            toReturn.r2 = r2 * other;
+            toReturn.r3 = r3 * other;
+            toReturn.r4 = r4 * other;
+
+            return toReturn;
+        }
+
+        // Matrix * Matrix
         mat4& operator*=(const mat4 other) {
             mat4 temp;
 
@@ -162,6 +182,18 @@ namespace TandenEngine {
 
             return toReturn;
         }
+
+        // Relational Operators
+        bool operator==(const mat4& other) const {
+            return ((r1 == other.r1) && (r2 == other.r2) && (r3 == other.r3) && (r4 == other.r4));
+        }
+
+        bool operator!=(const mat4& other) const {
+            return !(*this == other);
+        }
+
+        // TODO: other fun stuff you can do with matrices
+
 
         std::string ToString();
 
