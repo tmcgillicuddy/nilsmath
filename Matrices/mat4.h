@@ -21,11 +21,6 @@ namespace TandenEngine {
             r3 += other.r3;
             r4 += other.r4;
 
-            //r1.x += other.r1.x; r1.y += other.r1.y; r1.z += other.r1.z; r1.w += other.r1.w;
-            //r2.x += other.r2.x; r2.y += other.r2.y; r2.z += other.r2.z; r2.w += other.r2.w;
-            //r3.x += other.r3.x; r3.y += other.r3.y; r3.z += other.r3.z; r3.w += other.r3.w;
-            //r4.x += other.r4.x; r4.y += other.r4.y; r4.z += other.r4.z; r4.w += other.r4.w;
-
             return *this;
         }
 
@@ -37,11 +32,6 @@ namespace TandenEngine {
             toReturn.r3 = r3 + other.r3;
             toReturn.r4 = r4 + other.r4;
 
-            //toReturn.r1.x = r1.x + other.r1.x; toReturn.r1.y = r1.y + other.r1.y; toReturn.r1.z = r1.z + other.r1.z; toReturn.r1.w = r1.w + other.r1.w;
-            //toReturn.r2.x = r2.x + other.r2.x; toReturn.r2.y = r2.y + other.r2.y; toReturn.r2.z = r2.z + other.r2.z; toReturn.r2.w = r2.w + other.r2.w;
-            //toReturn.r3.x = r3.x + other.r3.x; toReturn.r3.y = r3.y + other.r3.y; toReturn.r3.z = r3.z + other.r3.z; toReturn.r3.w = r3.w + other.r3.w;
-            //toReturn.r4.x = r4.x + other.r4.x; toReturn.r4.y = r4.y + other.r4.y; toReturn.r4.z = r4.z + other.r4.z; toReturn.r4.w = r4.w + other.r4.w;
-
             return toReturn;
         }
 
@@ -51,11 +41,6 @@ namespace TandenEngine {
             r2 += other;
             r3 += other;
             r4 += other;
-
-            //r1.x += other; r1.y += other; r1.z += other; r1.w += other;
-            //r2.x += other; r2.y += other; r2.z += other; r2.w += other;
-            //r3.x += other; r3.y += other; r3.z += other; r3.w += other;
-            //r4.x += other; r4.y += other; r4.z += other; r4.w += other;
 
             return *this;
         }
@@ -154,7 +139,6 @@ namespace TandenEngine {
             temp.r4.y = ((r4.x * other.r1.y) + (r4.y * other.r2.y) + (r4.z * other.r3.y) + (r4.w * other.r4.y));
             temp.r4.z = ((r4.x * other.r1.z) + (r4.y * other.r2.z) + (r4.z * other.r3.z) + (r4.w * other.r4.z));
             temp.r4.w = ((r4.x * other.r1.w) + (r4.y * other.r2.w) + (r4.z * other.r3.w) + (r4.w * other.r4.w));
-
 
             *this = temp;
             return* this;
