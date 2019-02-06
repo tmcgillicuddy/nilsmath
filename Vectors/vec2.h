@@ -10,9 +10,8 @@
 namespace TandenEngine {
 
 	struct vec2 {
-
-		vec2() {};
-		vec2(float setX, float setY) { x = setX, y = setY; };
+		vec2() {}
+		vec2(float setX, float setY) { x = setX, y = setY; }
 
 		float x = 0.0, y = 0.0;
 
@@ -21,82 +20,82 @@ namespace TandenEngine {
 			x += other.x;
 			y += other.y;
 			return *this;
-		};
+		}
 
 		vec2 operator+(const vec2& other) const {
 			vec2 toReturn;
 			toReturn.x = x + other.x;
 			toReturn.y = y + other.y;
 			return toReturn;
-		};
+		}
 
 		vec2& operator+=(const float other) {
 			x += other;
 			y += other;
 			return *this;
-		};
+		}
 
 		vec2 operator+(const float other) const {
 			vec2 toReturn;
 			toReturn.x = x + other;
 			toReturn.y = y + other;
 			return toReturn;
-		};
+		}
 
 		// Vector Subtraction
 		vec2& operator-=(const vec2& other) {
 			x -= other.x;
 			y -= other.y;
 			return *this;
-		};
+		}
 
 		vec2 operator-(const vec2& other) const {
 			vec2 toReturn;
 			toReturn.x = x - other.x;
 			toReturn.y = y - other.y;
 			return toReturn;
-		};
+		}
 
 		vec2& operator-=(const float other) {
 			x -= other;
 			y -= other;
 			return *this;
-		};
+		}
 
 		vec2 operator-(const float other) const {
 			vec2 toReturn;
 			toReturn.x = x - other;
 			toReturn.y = y - other;
 			return toReturn;
-		};
+		}
 
 		// Scalar Multiplication
 		vec2& operator*=(const float other) {
 			x *= other;
 			y *= other;
 			return *this;
-		};
+		}
 
 		vec2 operator*(const float other) const {
 			vec2 toReturn;
 			toReturn.x = x * other;
 			toReturn.y = y * other;
 			return toReturn;
-		};
+		}
 
 		// Hadamard Product, multiplication of elements
 		vec2& operator*=(const vec2& other) {
 			x *= other.x;
 			y *= other.y;
 			return *this;
-		};
+		}
 
 		vec2 operator*(const vec2& other) const {
 			vec2 toReturn;
 			toReturn.x = x * other.x;
 			toReturn.y = y * other.y;
 			return toReturn;
-		};
+		}
 
         // Relational Operators
         bool operator==(const vec2& other) const {
@@ -112,13 +111,13 @@ namespace TandenEngine {
 		friend std::ostream & operator << (std::ostream &out, const vec2 &data);
 
 		float Norm() const;
-		float Magnitude() const { return Norm(); };
-		float Length() const { return Norm(); };
+		float Magnitude() const { return Norm(); }
+		float Length() const { return Norm(); }
 
 		float Distance(const vec2& other) const;
 		float Dot(const vec2& other) const;
 
-		//Static Vec2s
+		// Static Vec2s
 		static const vec2 ZERO;
 		static const vec2 ONE;
 		static const vec2 UP;
@@ -126,6 +125,6 @@ namespace TandenEngine {
 		static const vec2 LEFT;
 		static const vec2 RIGHT;
 	};
-}
+}  // namespace TandenEngine
 
-#endif HWENGINE_VECTOR2_H
+#endif  // TANDENENGINE_VECTOR2_H

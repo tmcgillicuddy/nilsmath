@@ -10,9 +10,11 @@
 namespace TandenEngine {
 
     struct mat3 {
-        mat3() {};
-        ~mat3() {};
-        mat3(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3);
+        mat3() {}
+        ~mat3() {}
+        mat3(float x1, float y1, float z1,
+                float x2, float y2, float z2,
+                float x3, float y3, float z3);
 
         // Matrix + Matrix
         mat3& operator+=(const mat3& other) {
@@ -160,11 +162,11 @@ namespace TandenEngine {
         vec3 r2;
         vec3 r3;
 
-
+        // Static Mat3s
         static const mat3 ZERO;
         static const mat3 ONE;
         static const mat3 IDENTITY;
     };
-}
+}  // namespace TandenEngine
 
-#endif //TANDENENGINE_MATRIX3_H
+#endif  // TANDENENGINE_MATRIX3_H

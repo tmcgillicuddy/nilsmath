@@ -7,24 +7,23 @@
 
 namespace TandenEngine {
 
-    const vec3 vec3::ZERO = vec3(0,0,0);
-    const vec3 vec3::ONE = vec3(1,1,1);
-    const vec3 vec3::UP = vec3(0,1,0);
-    const vec3 vec3::DOWN = vec3(0,-1,0);
-    const vec3 vec3::LEFT = vec3(-1,0,0);
-    const vec3 vec3::RIGHT = vec3(1,0,0);
-    const vec3 vec3::FORWARD = vec3(0,0,1);
-    const vec3 vec3::BACKWARD = vec3(0,0,-1);
+    const vec3 vec3::ZERO = vec3(0, 0, 0);
+    const vec3 vec3::ONE = vec3(1, 1, 1);
+    const vec3 vec3::UP = vec3(0, 1, 0);
+    const vec3 vec3::DOWN = vec3(0, -1, 0);
+    const vec3 vec3::LEFT = vec3(-1, 0, 0);
+    const vec3 vec3::RIGHT = vec3(1, 0, 0);
+    const vec3 vec3::FORWARD = vec3(0, 0, 1);
+    const vec3 vec3::BACKWARD = vec3(0, 0, -1);
 
-    std::ostream & operator << (std::ostream &out, const vec3 &data)
-    {
+    std::ostream & operator << (std::ostream &out, const vec3 &data) {
         out << "X: " << data.x;
         out << " Y: " << data.y;
         out << " Z: " << data.z << std::endl;
         return out;
     }
 
-    float vec3::Norm() const{
+    float vec3::Norm() const {
         return sqrt(this->x * this->x + this->y * this->y + this->z * this->z);
     }
 
@@ -52,4 +51,4 @@ namespace TandenEngine {
         return  "X: " + std::to_string(x) + " Y: " + std::to_string(y) + " Z: " + std::to_string(z);
     }
 
-}
+}  // namespace TandenEngine
