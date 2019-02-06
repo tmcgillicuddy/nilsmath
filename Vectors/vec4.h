@@ -9,9 +9,9 @@
 
 namespace TandenEngine {
 
-	struct vec4 {
-		vec4() {};
-		vec4(float setX, float setY, float setZ, float setW) { x = setX, y = setY, z = setZ, w = setW; };
+    struct vec4 {
+		vec4() {}
+		vec4(float setX, float setY, float setZ, float setW) { x = setX, y = setY, z = setZ, w = setW; }
 
 		float x = 0.0, y = 0.0, z = 0.0, w = 0.0;
 
@@ -22,7 +22,7 @@ namespace TandenEngine {
             z += other.z;
             w += other.w;
             return *this;
-        };
+        }
 
         vec4 operator+(const vec4& other) const {
             vec4 toReturn;
@@ -31,7 +31,7 @@ namespace TandenEngine {
             toReturn.z = z + other.z;
             toReturn.w = w + other.w;
             return toReturn;
-        };
+        }
 
         vec4& operator+=(const float other) {
             x += other;
@@ -39,7 +39,7 @@ namespace TandenEngine {
             z += other;
             w += other;
             return *this;
-        };
+        }
 
         vec4 operator+(const float other) const {
             vec4 toReturn;
@@ -48,7 +48,7 @@ namespace TandenEngine {
             toReturn.z = z + other;
             toReturn.w = w + other;
             return toReturn;
-        };
+        }
 
         // Vector Subtraction
         vec4& operator-=(const vec4& other) {
@@ -57,7 +57,7 @@ namespace TandenEngine {
             z -= other.z;
             w -= other.w;
             return *this;
-        };
+        }
 
         vec4 operator-(const vec4& other) const {
             vec4 toReturn;
@@ -66,7 +66,7 @@ namespace TandenEngine {
             toReturn.z = z - other.z;
             toReturn.w = w - other.w;
             return toReturn;
-        };
+        }
 
         vec4& operator-=(const float other) {
             x -= other;
@@ -74,7 +74,7 @@ namespace TandenEngine {
             z -= other;
             w -= other;
             return *this;
-        };
+        }
 
         vec4 operator-(const float other) const {
             vec4 toReturn;
@@ -83,7 +83,7 @@ namespace TandenEngine {
             toReturn.z = z - other;
             toReturn.w = w - other;
             return toReturn;
-        };
+        }
 
         // Scalar Multiplication
         vec4& operator*=(const float other) {
@@ -92,7 +92,7 @@ namespace TandenEngine {
             z *= other;
             w *= other;
             return *this;
-        };
+        }
 
         vec4 operator*(const float other) const {
             vec4 toReturn;
@@ -101,7 +101,7 @@ namespace TandenEngine {
             toReturn.z = z * other;
             toReturn.w = w * other;
             return toReturn;
-        };
+        }
 
         // Hadamard Product, multiplication of elements
         vec4& operator*=(const vec4& other) {
@@ -110,7 +110,7 @@ namespace TandenEngine {
             z *= other.z;
             w *= other.w;
             return *this;
-        };
+        }
 
         vec4 operator*(const vec4& other) const {
             vec4 toReturn;
@@ -119,7 +119,7 @@ namespace TandenEngine {
             toReturn.z = z * other.z;
             toReturn.w = w * other.w;
             return toReturn;
-        };
+        }
 
         // Relational Operators
         bool operator==(const vec4& other) const {
@@ -134,21 +134,17 @@ namespace TandenEngine {
 
         std::string ToString();
 
-        // TODO: better way of aliasing this
-        static float Norm(const vec4& vec);
-        static float Magnitude(const vec4& vec) { return Norm(vec); };
-        static float Length(const vec4& vec)  { return Norm(vec); };;
+        float Norm() const;
+        float Magnitude() const { return Norm(); }
+        float Length()  const { return Norm(); }
 
-        static float Distance(const vec4& pos, const vec4& target);
+        float Distance(const vec4& other) const;
+        float Dot(const vec4& other) const;
 
-        static float Dot(const vec4& a, const vec4& b);
-
-        //Static Vec2s
+        // Static Vec4s
         static const vec4 ZERO;
         static const vec4 ONE;
+	};
+}  // namespace TandenEngine
 
-    };
-
-}
-
-#endif HWENGINE_VECTOR4_H
+#endif  // TANDENENGINE_VECTOR4_H

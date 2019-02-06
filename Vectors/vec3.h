@@ -10,9 +10,9 @@
 namespace TandenEngine {
 
     struct vec3 {
-        vec3() {};
+        vec3() {}
 
-        vec3(float setX, float setY, float setZ) { x = setX, y = setY, z = setZ; };
+        vec3(float setX, float setY, float setZ) { x = setX, y = setY, z = setZ; }
 
         float x = 0.0, y = 0.0, z = 0.0;
 
@@ -22,7 +22,7 @@ namespace TandenEngine {
             y += other.y;
             z += other.z;
             return *this;
-        };
+        }
 
         vec3 operator+(const vec3 &other) const {
             vec3 toReturn;
@@ -30,14 +30,14 @@ namespace TandenEngine {
             toReturn.y = y + other.y;
             toReturn.z = z + other.z;
             return toReturn;
-        };
+        }
 
         vec3 &operator+=(const float other) {
             x += other;
             y += other;
             z += other;
             return *this;
-        };
+        }
 
         vec3 operator+(const float other) const {
             vec3 toReturn;
@@ -45,7 +45,7 @@ namespace TandenEngine {
             toReturn.y = y + other;
             toReturn.z = z + other;
             return toReturn;
-        };
+        }
 
         // Vector Subtraction
         vec3 &operator-=(const vec3 &other) {
@@ -53,7 +53,7 @@ namespace TandenEngine {
             y -= other.y;
             z -= other.z;
             return *this;
-        };
+        }
 
         vec3 &operator-(const vec3 &other) const {
             vec3 toReturn;
@@ -61,14 +61,14 @@ namespace TandenEngine {
             toReturn.y = y - other.y;
             toReturn.z = z - other.z;
             return toReturn;
-        };
+        }
 
         vec3 &operator-=(const float other) {
             x -= other;
             y -= other;
             z -= other;
             return *this;
-        };
+        }
 
         vec3 operator-(const float other) const {
             vec3 toReturn;
@@ -76,7 +76,7 @@ namespace TandenEngine {
             toReturn.y = y - other;
             toReturn.z = z - other;
             return toReturn;
-        };
+        }
 
         // Scalar Multiplication
         vec3 &operator*=(const float other) {
@@ -84,7 +84,7 @@ namespace TandenEngine {
             y *= other;
             z *= other;
             return *this;
-        };
+        }
 
         vec3 operator*(const float other) const {
             vec3 toReturn;
@@ -92,7 +92,7 @@ namespace TandenEngine {
             toReturn.y = y * other;
             toReturn.z = z * other;
             return toReturn;
-        };
+        }
 
         // Hadamard Product, multiplication of elements
         vec3 &operator*=(const vec3 &other) {
@@ -100,7 +100,7 @@ namespace TandenEngine {
             y *= other.y;
             z *= other.z;
             return *this;
-        };
+        }
 
         vec3 operator*(const vec3 &other) const {
             vec3 toReturn;
@@ -108,7 +108,7 @@ namespace TandenEngine {
             toReturn.y = y * other.y;
             toReturn.z = z * other.z;
             return toReturn;
-        };
+        }
 
         // Relational Operators
         bool operator==(const vec3 &other) const {
@@ -119,24 +119,19 @@ namespace TandenEngine {
             return !(*this == other);
         }
 
-        friend ::std::ostream &operator<<(::std::ostream &out, const vec3 &data);
+        friend std::ostream &operator<<(::std::ostream &out, const vec3 &data);
 
-        ::std::string ToString();
+        std::string ToString();
 
-        // TODO: better way of aliasing this
-        static float Norm(const vec3 &vec);
+        float Norm() const;
+        float Magnitude() const { return Norm(); }
+        float Length() const { return Norm(); }
 
-        static float Magnitude(const vec3 &vec) { return Norm(vec); };
+        float Distance(const vec3& other) const;
+        float Dot(const vec3& other) const;
+        vec3 Cross(const vec3& other) const;
 
-        static float Length(const vec3 &vec) { return Norm(vec); };;
-
-        static float Distance(const vec3 &pos, const vec3 &target);
-
-        static float Dot(const vec3 &a, const vec3 &b);
-
-        static vec3 Cross(const vec3 &a, const vec3 &b);
-
-        //Static Vec3s
+        // Static Vec3s
         static const vec3 ZERO;
         static const vec3 ONE;
         static const vec3 UP;
@@ -146,6 +141,6 @@ namespace TandenEngine {
         static const vec3 FORWARD;
         static const vec3 BACKWARD;
     };
-}
+}  // namespace TandenEngine
 
-#endif HWENGINE_VECTOR3_H
+#endif  // TANDENENGINE_VECTOR3_H

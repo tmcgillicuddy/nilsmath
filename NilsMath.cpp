@@ -7,43 +7,40 @@
 
 namespace TandenEngine {
 
-    float NilsMath::dot(TandenEngine::vec2 a, TandenEngine::vec2 b) {
-        return (a.x * b.x + a.y * b.y);
+    float NilsMath::Dot(const vec2& a, const vec2& b) {
+        return ((a.x * b.x) + (a.y * b.y));
     }
 
-    float NilsMath::dot(TandenEngine::vec3 a, TandenEngine::vec3 b) {
-        return (a.x * b.x + a.y * b.y + a.z + b.z);
+    float NilsMath::Dot(const vec3& a, const vec3& b) {
+        return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z));
     }
 
-
-    float NilsMath::dot(TandenEngine::vec4 a, TandenEngine::vec4 b) {
-        return (a.x * b.x + a.y * b.y + a.z + b.z + a.w + b.w);
+    float NilsMath::Dot(const vec4& a, const vec4& b) {
+        return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w));
     }
 
-
-    float NilsMath::dist(TandenEngine::vec2 a, TandenEngine::vec2 b) {
-        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+    float NilsMath::Dist(const vec2& pos, const vec2& target) {
+        vec2 diff = target - pos;
+        return diff.Norm();
     }
 
-    float NilsMath::dist(TandenEngine::vec3 a, TandenEngine::vec3 b) {
-        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2) + pow(a.z - b.z, 2));
+    float NilsMath::Dist(const vec3& pos, const vec3& target) {
+        vec3 diff = target - pos;
+        return diff.Norm();
     }
 
-
-    float NilsMath::dist(TandenEngine::vec4 a, TandenEngine::vec4 b) {
-        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2) + pow(a.z - b.z, 2) + pow(a.w - b.w, 2));
+    float NilsMath::Dist(const vec4& pos, const vec4& target) {
+        vec4 diff = target - pos;
+        return diff.Norm();
     }
 
+    vec3 NilsMath::Cross(const vec3 &a, const vec3 &b) {
+        vec3 toReturn;
 
+        toReturn.x = (a.y * b.z) - (a.z * b.y);
+        toReturn.y = (a.z * b.x) - (a.x * b.z);
+        toReturn.z = (a.x * b.y) - (a.y * b.x);
 
-    float NilsMath::cross(TandenEngine::vec2 a, TandenEngine::vec2 b) {
-        return float(a.x * b.y - b.x * a.y);
+        return toReturn;
     }
-
-    vec3 NilsMath::cross(TandenEngine::vec3 a, TandenEngine::vec3 b) {
-        return vec3(a.y * b.z - b.y * a.z, a.x * b.z - b.x * a.z, a.x * b.y - b.x * a.y);
-    }
-
-
-
-}
+}  // namespace TandenEngine
