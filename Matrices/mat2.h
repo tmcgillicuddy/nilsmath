@@ -8,14 +8,12 @@
 #include "Vectors/vec2.h"
 
 namespace TandenEngine {
-
     struct mat2 {
         vec2 r1, r2;
 
-        mat2(){};
-        ~mat2() {};
+        mat2() {}
+        ~mat2() {}
         mat2(float x1, float y1, float x2, float y2);
-
 
         // Matrix + Matrix
         mat2& operator+=(const mat2& other) {
@@ -111,7 +109,6 @@ namespace TandenEngine {
             temp.r2.x = ((r2.x * other.r1.x) + (r2.y * other.r2.x));
             temp.r2.y = ((r2.x * other.r1.y) + (r2.y * other.r2.y));
 
-
             *this = temp;
             return* this;
         }
@@ -140,13 +137,11 @@ namespace TandenEngine {
 
         std::string ToString();
 
-
+        // Static Mat2s
         static const mat2 ZERO;
         static const mat2 ONE;
         static const mat2 IDENTITY;
-
     };
+}  // namespace TandenEngine
 
-}
-
-#endif //TANDENENGINE_MAT2_H
+#endif  // TANDENENGINE_MAT2_H

@@ -43,7 +43,4 @@ namespace TandenEngine {
 
         return toReturn;
     }
-
-
-
-}
+}  // namespace TandenEngine

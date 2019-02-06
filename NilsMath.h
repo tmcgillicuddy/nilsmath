@@ -15,7 +15,6 @@
 #include "Color.h"
 
 namespace TandenEngine {
-
     class NilsMath {
      public:
         static float Dot(const vec2& a, const vec2& b);
@@ -27,12 +26,8 @@ namespace TandenEngine {
         static float Dist(const vec4& a, const vec4& b);
 
         static vec3 Cross(const vec3 &a, const vec3 &b);
-
-    public:
-        // TODO: angles between, figure out primitives, matrices, ???
-
+        // TODO(Nils) angles between, figure out primitives, matrices, ???
     };
+}  // namespace TandenEngine
 
-}
-
-#endif //HWENGINE_NILSMATH_H
+#endif  // HWENGINE_NILSMATH_H
