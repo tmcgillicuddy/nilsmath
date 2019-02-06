@@ -21,7 +21,7 @@ namespace TandenEngine {
 
         Color(std::string hexCode); //Create color using hexcode input
 
-        static Color ColorHSL(float h, float s, float l); //Create color using HSL input
+        static Color ColorHSL (float h, float s, float l); //Create color using HSL input
 
         friend std::ostream & operator << (std::ostream &out, const Color &data);
 
