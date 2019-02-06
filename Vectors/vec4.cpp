@@ -19,17 +19,17 @@ namespace TandenEngine {
         return out;
     }
 
-    float vec4::Norm(const TandenEngine::vec4 &vec) {
-        return sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + vec.w * vec.w);
+    float vec4::Norm() const {
+        return sqrt(this->x * this->x + this->y * this->y + this->z * this->z + this->w * this->w);
     }
 
-    float vec4::Distance(const vec4& pos, const vec4& target) {
-        vec4 diff = target - pos;
-        return Norm(diff);
+    float vec4::Distance(const vec4& other) const {
+        vec4 diff = *this - other;
+        return diff.Norm();
     }
 
-    float vec4::Dot(const vec4& a, const vec4& b) {
-        return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w));
+    float vec4::Dot(const vec4& other) const {
+        return ((this->x * other.x) + (this->y * other.y) + (this->z * other.z) + (this->w * other.w));
     }
 
     std::string vec4::ToString() {

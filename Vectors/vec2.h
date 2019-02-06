@@ -111,14 +111,12 @@ namespace TandenEngine {
 
 		friend std::ostream & operator << (std::ostream &out, const vec2 &data);
 
-		// TODO: better way of aliasing this
-		static float Norm(const vec2& vec);
-		static float Magnitude(const vec2& vec) { return Norm(vec); };
-		static float Length(const vec2& vec)  { return Norm(vec); };;
+		float Norm() const;
+		float Magnitude() const { return Norm(); };
+		float Length() const { return Norm(); };
 
-        static float Distance(const vec2& pos, const vec2& target);
-
-		static float Dot(const vec2& a, const vec2& b);
+		float Distance(const vec2& other) const;
+		float Dot(const vec2& other) const;
 
 		//Static Vec2s
 		static const vec2 ZERO;
