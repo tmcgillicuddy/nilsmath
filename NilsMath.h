@@ -17,18 +17,16 @@
 namespace TandenEngine {
 
     class NilsMath {
+     public:
+        static float Dot(const vec2& a, const vec2& b);
+        static float Dot(const vec3& a, const vec3& b);
+        static float Dot(const vec4& a, const vec4& b);
 
-        // Ask Sajid if I can do this better
-        static float dot(vec2 a, vec2 b);
-        static float dot(vec3 a, vec3 b);
-        static float dot(vec4 a, vec4 b);
+        static float Dist(const vec2& a, const vec2& b);
+        static float Dist(const vec3& a, const vec3& b);
+        static float Dist(const vec4& a, const vec4& b);
 
-        static float dist(vec2 a, vec2 b);
-        static float dist(vec3 a, vec3 b);
-        static float dist(vec4 a, vec4 b);
-
-        static float cross(vec2 a, vec2 b);
-        static vec3 cross(vec3 a, vec3 b);
+        static vec3 Cross(const vec3 &a, const vec3 &b);
 
     public:
         // TODO: angles between, figure out primitives, matrices, ???

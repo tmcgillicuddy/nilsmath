@@ -134,14 +134,12 @@ namespace TandenEngine {
 
         std::string ToString();
 
-        // TODO: better way of aliasing this
-        static float Norm(const vec4& vec);
-        static float Magnitude(const vec4& vec) { return Norm(vec); };
-        static float Length(const vec4& vec)  { return Norm(vec); };;
+        float Norm() const;
+        float Magnitude() const { return Norm(); };
+        float Length()  const { return Norm(); };
 
-        static float Distance(const vec4& pos, const vec4& target);
-
-        static float Dot(const vec4& a, const vec4& b);
+        float Distance(const vec4& other) const;
+        float Dot(const vec4& other) const;
 
         //Static Vec2s
         static const vec4 ZERO;
