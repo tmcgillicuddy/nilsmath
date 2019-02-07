@@ -6,17 +6,16 @@
 
 namespace TandenEngine {
 
-    const Color Color::RED = Color(1,0,0);
-    const Color Color::GREEN = Color(0,1,0);
-    const Color Color::BLUE = Color(0,0,1);
-    const Color Color::WHITE = Color(1,1,1);
-    const Color Color::BLACK = Color(0,0,0);
-    const Color Color::YELLOW = Color(1,1,0);
-    const Color Color::CYAN = Color(0,1,1);
-    const Color Color::MAGENTA = Color(1,0,1);
+    const Color Color::RED = Color(1, 0, 0);
+    const Color Color::GREEN = Color(0, 1, 0);
+    const Color Color::BLUE = Color(0, 0, 1);
+    const Color Color::WHITE = Color(1, 1, 1);
+    const Color Color::BLACK = Color(0, 0, 0);
+    const Color Color::YELLOW = Color(1, 1, 0);
+    const Color Color::CYAN = Color(0, 1, 1);
+    const Color Color::MAGENTA = Color(1, 0, 1);
 
-    std::ostream & operator << (std::ostream &out, const Color &data)
-    {
+    std::ostream & operator << (std::ostream &out, const Color &data) {
         out << "R: " << data.r;
         out << " G: " << data.g;
         out << " B: " << data.b;
@@ -24,8 +23,7 @@ namespace TandenEngine {
         return out;
     }
 
-    Color::Color(std::string hexCode)
-    {
+    Color::Color(std::string hexCode) {
         {
             if (hexCode[0] == '#')
                 hexCode = hexCode.erase(0, 1);
@@ -40,13 +38,11 @@ namespace TandenEngine {
         }
     }
 
-    int Color::HexadecimalToDecimal(std::string hex)
-    {
+    int Color::HexadecimalToDecimal(std::string hex) {
         int hexLength = hex.length();
         double dec = 0;
 
-        for (int i = 0; i < hexLength; ++i)
-        {
+        for (int i = 0; i < hexLength; ++i) {
             char b = hex[i];
 
             if (b >= 48 && b <= 57)
@@ -67,10 +63,9 @@ namespace TandenEngine {
             a = alpha;
     }
 
-    Color Color::ColorHSL(float h, float s, float l)
-    {
+    Color Color::ColorHSL(float h, float s, float l) {
         Color col = Color::WHITE;
-        if(s > 0) {
+        if (s > 0) {
             float lumTemp1;
 
             if ((l / 100) < 0.5) {
@@ -84,14 +79,14 @@ namespace TandenEngine {
 
             float hueTemp = h / 360;
 
-            //Calculate rgb values
+            // Calculate rgb values
             float tempR, tempG, tempB;
 
             tempR = hueTemp + 0.333f;
             tempG = hueTemp;
             tempB = hueTemp - 0.333f;
 
-            //Wrap values
+            // Wrap values
             if (tempR > 1) tempR -= 1;
             else if (tempR < 0) tempR += 1;
 
@@ -101,19 +96,17 @@ namespace TandenEngine {
             if (tempB > 1) tempB -= 1;
             else if (tempB < 0) tempB += 1;
 
-            //Test values
-            if(HSLTest1(tempR)) {
+            // Test values
+            if (HSLTest1(tempR)) {
                 tempR = lumTemp2 + (lumTemp1 - lumTemp2) * 6 * tempR;
-            } else if(HSLTest2(tempR)) {
+            } else if (HSLTest2(tempR)) {
                 tempR = lumTemp1;
-            } else if(HSLTest3(tempR)) {
+            } else if (HSLTest3(tempR)) {
                 tempR = lumTemp2 + (lumTemp1 - lumTemp2) * (0.666f - tempR) * 6;
             }
 
             col = Color(tempR, tempG, tempB);
-        }
-        else //Gray scale color
-        {
+        } else {  // Gray scale color
             float tempGray = (l/100) * 255;
             col = Color(tempGray, tempGray, tempGray);
         }
@@ -132,4 +125,4 @@ namespace TandenEngine {
     bool Color::HSLTest3(float value) {
         return (3*value < 2);
     }
-}
+}  // namespace TandenEngine

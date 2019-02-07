@@ -24,6 +24,6 @@ namespace std {
                      (::std::hash<float>()(vector.y) << 1)) >> 1);
         }
     };
-}
+}  // namespace std
 
-#endif //TANDENENGINE_VECTORHASHING_H
+#endif  // TANDENENGINE_VECTORHASHING_H
