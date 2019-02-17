@@ -110,6 +110,22 @@ namespace TandenEngine {
             return toReturn;
         }
 
+        // Divide by float
+        vec3& operator/=(const float other) {
+            x /= other;
+            y /= other;
+            z /= other;
+            return *this;
+        }
+
+        vec3 operator/(const float other) const {
+            vec3 toReturn;
+            toReturn.x = x / other;
+            toReturn.y = y / other;
+            toReturn.z = z / other;
+            return toReturn;
+        }
+
         // Relational Operators
         bool operator==(const vec3 &other) const {
             return ((x == other.x) && (y == other.y) && (z == other.z));
@@ -127,6 +143,7 @@ namespace TandenEngine {
         float Magnitude() const { return Norm(); }
         float Length() const { return Norm(); }
 
+        vec3 Normalize();
         float Distance(const vec3& other) const;
         float Dot(const vec3& other) const;
         vec3 Cross(const vec3& other) const;

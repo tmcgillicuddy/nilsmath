@@ -121,6 +121,24 @@ namespace TandenEngine {
             return toReturn;
         }
 
+        // Divide by float
+        vec4& operator/=(const float other) {
+            x /= other;
+            y /= other;
+            z /= other;
+            w /= other;
+            return *this;
+        }
+
+        vec4 operator/(const float other) const {
+            vec4 toReturn;
+            toReturn.x = x / other;
+            toReturn.y = y / other;
+            toReturn.z = z / other;
+            toReturn.w = w / other;
+            return toReturn;
+        }
+
         // Relational Operators
         bool operator==(const vec4& other) const {
             return ((x == other.x) && (y == other.y) && (z == other.z) && (w == other.w));
@@ -138,6 +156,7 @@ namespace TandenEngine {
         float Magnitude() const { return Norm(); }
         float Length()  const { return Norm(); }
 
+        vec4 Normalize();
         float Distance(const vec4& other) const;
         float Dot(const vec4& other) const;
 

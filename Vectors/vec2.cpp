@@ -24,6 +24,10 @@ namespace TandenEngine {
         return sqrt(this->x * this->x + this->y * this->y);
     }
 
+    vec2 vec2::Normalize() {
+        return *this / this->Norm();
+    }
+
     float vec2::Distance(const vec2& other) const {
         vec2 diff = *this - other;
         return diff.Norm();

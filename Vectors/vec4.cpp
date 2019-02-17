@@ -23,6 +23,10 @@ namespace TandenEngine {
         + this->z * this->z + this->w * this->w);
     }
 
+    vec4 vec4::Normalize() {
+        return *this / this->Norm();
+    }
+
     float vec4::Distance(const vec4& other) const {
         vec4 diff = *this - other;
         return diff.Norm();
