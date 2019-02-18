@@ -2,10 +2,16 @@
 // Created by thomas.mcgillicuddy on 10/22/2018.
 //
 
+#define _USE_MATH_DEFINES
+
 #include "NilsMath.h"
 #include <cmath>
 
 namespace TandenEngine {
+
+    const float PI = (float)M_PI;
+    const float PI_2 = (float)M_PI_2;
+    const float PI_4 = (float)M_PI_4;
 
     float NilsMath::Dot(const vec2& a, const vec2& b) {
         return ((a.x * b.x) + (a.y * b.y));

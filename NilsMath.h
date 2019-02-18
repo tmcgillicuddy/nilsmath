@@ -17,6 +17,10 @@
 namespace TandenEngine {
     class NilsMath {
      public:
+        static const float PI;
+        static const float PI_2;
+        static const float PI_4;
+
         static float Dot(const vec2& a, const vec2& b);
         static float Dot(const vec3& a, const vec3& b);
         static float Dot(const vec4& a, const vec4& b);
