@@ -39,4 +39,11 @@ namespace TandenEngine {
         return "\n" + r1.ToString() + '\n' + r2.ToString() + '\n'
         + r3.ToString() + '\n' + r4.ToString();
     }
+
+    mat4::mat4(float singleVal) {
+        r1 = vec4(singleVal);
+        r2 = vec4(singleVal);
+        r3 = vec4(singleVal);
+        r4 = vec4(singleVal);
+    }
 }  // namespace TandenEngine

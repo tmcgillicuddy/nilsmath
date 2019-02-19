@@ -16,6 +16,7 @@ namespace TandenEngine {
                 float x2, float y2, float z2, float w2,
                 float x3, float y3, float z3, float w3,
                 float x4, float y4, float z4, float w4);
+        mat4(float singleVal);
 
         // Matrix + Matrix
         mat4& operator+=(const mat4& other) {
@@ -214,7 +215,7 @@ namespace TandenEngine {
         static mat4 Transpose(const mat4& mat);
 
         // TODO(Nils) other fun stuff you can do with matrices
-
+        // TODO(Nils) glm::perspective function copy
         std::string ToString();
 
         vec4 r1;

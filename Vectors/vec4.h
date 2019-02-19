@@ -12,6 +12,7 @@ namespace TandenEngine {
     struct vec4 {
 		vec4() {}
 		vec4(float setX, float setY, float setZ, float setW) { x = setX, y = setY, z = setZ, w = setW; }
+        vec4(float singleArg);
 
 		float x = 0.0, y = 0.0, z = 0.0, w = 0.0;
 

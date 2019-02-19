@@ -42,4 +42,8 @@ namespace TandenEngine {
                 " Z: " + std::to_string(z) + " W: " + std::to_string(w);
     }
 
+    vec4::vec4(float singleArg) {
+        x = y = z = w = singleArg;
+    }
+
 }  // namespace TandenEngine
