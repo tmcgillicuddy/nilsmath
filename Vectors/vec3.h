@@ -10,7 +10,7 @@
 namespace TandenEngine {
 
     struct vec3 {
-        vec3() {}
+        vec3() {x = y = z = 0;}
 
         vec3(float setX, float setY, float setZ) { x = setX, y = setY, z = setZ; }
 

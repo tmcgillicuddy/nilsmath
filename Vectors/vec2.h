@@ -10,7 +10,7 @@
 namespace TandenEngine {
 
 	struct vec2 {
-		vec2() {}
+		vec2() {x = y = 0;}
 		vec2(float setX, float setY) { x = setX, y = setY; }
 
 		union {
