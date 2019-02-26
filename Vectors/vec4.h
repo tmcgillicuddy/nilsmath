@@ -13,8 +13,12 @@ namespace TandenEngine {
 		vec4() {}
 		vec4(float setX, float setY, float setZ, float setW) { x = setX, y = setY, z = setZ, w = setW; }
         vec4(float singleArg);
-
-		float x = 0.0, y = 0.0, z = 0.0, w = 0.0;
+        union {
+            struct {
+                float x, y, z, w;
+            };
+            float v[4];
+        };
 
         // Vector Addition
         vec4& operator+=(const vec4& other) {

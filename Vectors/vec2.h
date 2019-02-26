@@ -13,7 +13,12 @@ namespace TandenEngine {
 		vec2() {}
 		vec2(float setX, float setY) { x = setX, y = setY; }
 
-		float x = 0.0, y = 0.0;
+		union {
+			struct {
+				float x, y;
+			};
+			float v[2];
+		};
 
 		// Vector Addition
 		vec2& operator+=(const vec2& other) {
