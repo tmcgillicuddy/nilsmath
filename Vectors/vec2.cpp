@@ -3,6 +3,7 @@
 //
 
 #include "vec2.h"
+#include <cmath>
 #include <string>
 
 namespace TandenEngine {

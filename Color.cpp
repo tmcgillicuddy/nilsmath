@@ -3,7 +3,7 @@
 //
 
 #include "Color.h"
-
+#include <cmath>
 namespace TandenEngine {
 
     const Color Color::RED = Color(1, 0, 0);

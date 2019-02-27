@@ -4,6 +4,7 @@
 
 #include "vec4.h"
 #include <string>
+#include <cmath>
 
 namespace TandenEngine {
 
