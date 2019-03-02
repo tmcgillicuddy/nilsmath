@@ -162,6 +162,7 @@ namespace TandenEngine {
         float Length()  const { return Norm(); }
 
         vec4 Normalize();
+        vec4 GetUnit() { return Normalize(); };
         float Distance(const vec4& other) const;
         float Dot(const vec4& other) const;
 
