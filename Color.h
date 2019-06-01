@@ -15,6 +15,8 @@ namespace TandenEngine {
         static bool HSLTest2(float value);
         static bool HSLTest3(float value);
 
+        float r = 0.0,g = 0.0,b = 0.0,a = 0.0; //d
+        Color(float red, float green, float blue, float alpha = 1); //Default color constructor that take sin rgba data
      public:
         float r = 0.0, g = 0.0, b = 0.0, a = 0.0;
         // Default color constructor that take sin rgba data
